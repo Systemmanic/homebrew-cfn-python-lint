@@ -1,0 +1,14 @@
+= Homebrew cfn-python-lint
+
+== Description
+
+For installing https://github.com/aws-cloudformation/cfn-python-lint[cfn-python-lint] for AWS CloudFormation with https://github.com/Homebrew/brew[Homebrew]
+
+== Installation
+
+. `brew tap dkanejs/cfn-python-lint`
+. `brew install cfn-lint`
+
+You can verify installation by running:
+
+`cfn-lint -h`
