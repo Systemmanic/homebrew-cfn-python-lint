@@ -3,8 +3,8 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https://github.com/awslabs/cfn-python-lint/"
-  url "https://github.com/awslabs/cfn-python-lint/archive/v0.17.1.tar.gz"
-  sha256 "2c017663afb2bf8ed76740431d8775ff6503d5f910f788b9cc15b2b280c25266"
+  url "https://github.com/awslabs/cfn-python-lint/archive/v0.18.1.tar.gz"
+  sha256 "66cee59dd524c1726326bbf448d5c99761b5dd151124a74f1d83b7e06e76c6bc"
 
   depends_on "python"
 
@@ -93,12 +93,24 @@ class CfnLint < Formula
     sha256 "de9529817c93f27c8ccbfead6985011db27bd0ddfcdb2d86f3f663385c6a9c22"
   end
 
-
   def install
     virtualenv_install_with_resources
   end
 
   test do
-    assert_match "usage", shell_output("#{bin}/cfn-lint --help")
+    (testpath/"test.yml").write <<~EOS
+      ---
+      AWSTemplateFormatVersion: '2010-09-09'
+      Resources:
+        # Helps tests map resource types
+        IamPipeline:
+          Type: "AWS::CloudFormation::Stack"
+          Properties:
+            TemplateURL: !Sub 'https://s3.${AWS::Region}.amazonaws.com/bucket-dne-${AWS::Region}/${AWS::AccountId}/pipeline.yaml'
+            Parameters:
+              DeploymentName: iam-pipeline
+              Deploy: 'auto'
+    EOS
+    system bin/"cfn-lint", "test.yml"
   end
 end
