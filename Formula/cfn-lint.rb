@@ -3,8 +3,8 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https://github.com/awslabs/cfn-python-lint/"
-  url "https://github.com/awslabs/cfn-python-lint/archive/v0.17.1.tar.gz"
-  sha256 "2c017663afb2bf8ed76740431d8775ff6503d5f910f788b9cc15b2b280c25266"
+  url "https://github.com/awslabs/cfn-python-lint/archive/v0.18.0.tar.gz"
+  sha256 "26a5d359046ea3f1b60ed167300ac67782716e775aadb795708ff6ea81fa90ff"
 
   depends_on "python"
 
@@ -92,7 +92,6 @@ class CfnLint < Formula
     url "https://files.pythonhosted.org/packages/b1/53/37d82ab391393565f2f831b8eedbffd57db5a718216f82f1a8b4d381a1c1/urllib3-1.24.1.tar.gz"
     sha256 "de9529817c93f27c8ccbfead6985011db27bd0ddfcdb2d86f3f663385c6a9c22"
   end
-
 
   def install
     virtualenv_install_with_resources
