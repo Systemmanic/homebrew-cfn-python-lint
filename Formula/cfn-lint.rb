@@ -98,6 +98,19 @@ class CfnLint < Formula
   end
 
   test do
-    assert_match "usage", shell_output("#{bin}/cfn-lint --help")
+    (testpath/"test.yml").write <<~EOS
+      ---
+      AWSTemplateFormatVersion: '2010-09-09'
+      Resources:
+        # Helps tests map resource types
+        IamPipeline:
+          Type: "AWS::CloudFormation::Stack"
+          Properties:
+            TemplateURL: !Sub 'https://s3.${AWS::Region}.amazonaws.com/bucket-dne-${AWS::Region}/${AWS::AccountId}/pipeline.yaml'
+            Parameters:
+              DeploymentName: iam-pipeline
+              Deploy: 'auto'
+    EOS
+    system bin/"cfn-lint", "test.yml"
   end
 end
