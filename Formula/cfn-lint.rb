@@ -3,8 +3,8 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https://github.com/awslabs/cfn-python-lint/"
-  url "https://github.com/awslabs/cfn-python-lint/archive/v0.18.1.tar.gz"
-  sha256 "66cee59dd524c1726326bbf448d5c99761b5dd151124a74f1d83b7e06e76c6bc"
+  url "https://github.com/awslabs/cfn-python-lint/archive/v0.19.1.tar.gz"
+  sha256 "c6e972420ce9d878efe6095203a32ce5afd108d736fb3b6af20a7a4d4e6e2daa"
 
   depends_on "python"
 
@@ -14,13 +14,13 @@ class CfnLint < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/ea/dd/3f3188d9278fe9ac7f28a59d7c9b08d4a4aa8cac0e4238d2ff5049c939e7/boto3-1.9.125.tar.gz"
-    sha256 "a791e676b2c43e49ecaf43961156a11dbb59a7ead07c1c80cf7237ec7608a6fa"
+    url "https://files.pythonhosted.org/packages/99/3d/37ff2862fdfc085c91e4b01def55860449cdefd4845a267e46d3340c761b/boto3-1.9.134.tar.gz"
+    sha256 "9c789a775f0499743b083ffd63e0e87dae9a727511bb37f2529da52ccd25a360"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/eb/6e/2b8ec3bb5278a068459a4c53de26a8790e8b5c41eb5ae75d23792a5275b4/botocore-1.12.125.tar.gz"
-    sha256 "ac9585c2afdf81929ccb69b8e6919ec64f3693cc7d3f4f216f292f63312111cf"
+    url "https://files.pythonhosted.org/packages/cc/ba/79a7e98d300d5d63ee83360aba534d0967cb3426440f027792573fb92a5b/botocore-1.12.134.tar.gz"
+    sha256 "5c4d9ea1b0fbb1dc98b6a06ed8780096fca981a1c3599bf8f03f338e6aa389ae"
   end
 
   resource "certifi" do
@@ -89,8 +89,8 @@ class CfnLint < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/b1/53/37d82ab391393565f2f831b8eedbffd57db5a718216f82f1a8b4d381a1c1/urllib3-1.24.1.tar.gz"
-    sha256 "de9529817c93f27c8ccbfead6985011db27bd0ddfcdb2d86f3f663385c6a9c22"
+    url "https://files.pythonhosted.org/packages/fd/fa/b21f4f03176463a6cccdb612a5ff71b927e5224e83483012747c12fc5d62/urllib3-1.24.2.tar.gz"
+    sha256 "9a247273df709c4fedb38c711e44292304f73f39ab01beda9f6b9fc375669ac3"
   end
 
   def install
