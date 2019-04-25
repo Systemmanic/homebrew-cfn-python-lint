@@ -6,9 +6,10 @@ For installing https://github.com/aws-cloudformation/cfn-python-lint[cfn-python-
 
 == Installation
 
-. `brew tap dkanejs/cfn-python-lint`
-. `brew install cfn-lint`
+Now part of https://github.com/Homebrew/homebrew-core/blob/master/Formula/cfn-lint.rb[Hombrew Core].
 
-You can verify installation by running:
+Install with brew: 
 
-`cfn-lint -h`
+```
+brew install cfn-lint
+```
